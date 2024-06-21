@@ -5,14 +5,12 @@ import jakarta.validation.constraints.Email;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.br.CPF;
-import org.springframework.validation.annotation.Validated;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Getter
 @Setter
-@Validated
 @Entity()
 @Table(name = "local_user")
 public class LocalUser {
@@ -28,7 +26,6 @@ public class LocalUser {
     private String password;
 
     @Column(name = "email", unique = true, nullable = false)
-    @Email
     private String email;
 
     @Column (name = "fist_name", nullable = false)
@@ -41,7 +38,6 @@ public class LocalUser {
     private String phone;
 
     @Column(name = "cpf")
-    @CPF
     private String cpf;
 
     @Column(name = "birth", nullable = false)
